@@ -28,7 +28,7 @@ require_once(__DIR__ . '/VelocloudAPI/vendor/autoload.php');
 	    print_r($result);											// Print out the array
 	} 
 	catch (Exception $e) {
-	    echo 'Exception when calling AllApi->configurationCloneConfiguration: ', $e->getMessage(), PHP_EOL;
+	    echo 'Exception when calling AllApi->enterpriseGetEnterpriseEdges: ', $e->getMessage(), PHP_EOL;
 	}
 
 

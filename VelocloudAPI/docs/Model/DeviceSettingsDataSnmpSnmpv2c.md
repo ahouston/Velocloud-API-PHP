@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**enable** | **bool** |  | [optional] 
+**enabled** | **bool** |  | [optional] 
 **community** | **string** |  | [optional] 
 **allowed_ip** | **string[]** |  | [optional] 
 

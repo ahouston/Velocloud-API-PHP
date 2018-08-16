@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**configuration_id** | **int** |  | 
+**id** | **int** |  | 
 **enterprise_id** | **int** |  | [optional] 
 **with** | **string[]** |  | [optional] 
 

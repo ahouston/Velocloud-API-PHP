@@ -1,6 +1,6 @@
 # Swagger\Client\MetaApi
 
-All URIs are relative to *https://sprint-vco1.velocloud.net/portal/rest*
+All URIs are relative to *https://localhost/portal/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

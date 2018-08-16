@@ -1,12 +1,12 @@
 # Swagger\Client\LoginApi
 
-All URIs are relative to *https://sprint-vco1.velocloud.net/portal/rest*
+All URIs are relative to *https://localhost/portal/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**loginEnterpriseLogin**](LoginApi.md#loginEnterpriseLogin) | **POST** /login/enterpriseLogin | Authentication for non-operator users
 [**loginOperatorLogin**](LoginApi.md#loginOperatorLogin) | **POST** /login/operatorLogin | Authentication for an operator user
-[**logout**](LoginApi.md#logout) | **POST** /logout | Deactivates a given authorization cookie
+[**logout**](LoginApi.md#logout) | **POST** /logout | Deactivate a given authorization cookie
 
 
 # **loginEnterpriseLogin**
@@ -104,7 +104,7 @@ No authorization required
 # **logout**
 > logout()
 
-Deactivates a given authorization cookie
+Deactivate a given authorization cookie
 
 ### Example
 ```php

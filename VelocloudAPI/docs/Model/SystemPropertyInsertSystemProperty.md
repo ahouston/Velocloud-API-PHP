@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **string** |  | 
 **value** | **string** |  | 
-**defaultvalue** | **string** |  | [optional] 
+**default_value** | **string** |  | [optional] 
 **data_type** | **string** |  | [optional] 
 **description** | **string** |  | [optional] 
 

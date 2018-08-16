@@ -5,7 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **enterprise_id** | **int** |  | [optional] 
 **configuration_id** | **int** |  | 
-**name** | **string** |  | 
+**name** | **string** |  | [optional] 
 **serial_number** | **string** |  | [optional] 
 **model_number** | **string** |  | 
 **description** | **string** |  | [optional] 

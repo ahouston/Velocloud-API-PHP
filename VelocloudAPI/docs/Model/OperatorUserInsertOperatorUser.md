@@ -3,6 +3,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**id** | **int** |  | [optional] 
+**created** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**user_type** | **string** |  | [optional] 
 **username** | **string** |  | 
 **domain** | **string** |  | [optional] 
 **password** | **string** |  | 
@@ -10,9 +13,12 @@ Name | Type | Description | Notes
 **last_name** | **string** |  | [optional] 
 **office_phone** | **string** |  | [optional] 
 **mobile_phone** | **string** |  | [optional] 
+**is_native** | **int** |  | [optional] 
+**is_active** | **int** |  | [optional] 
+**is_locked** | **int** |  | [optional] 
 **email** | **string** |  | [optional] 
-**is_native** | **bool** |  | [optional] 
-**is_active** | **bool** |  | [optional] 
+**last_login** | [**\DateTime**](\DateTime.md) |  | [optional] 
+**modified** | [**\DateTime**](\DateTime.md) |  | [optional] 
 **network_id** | **int** |  | 
 **role_id** | **int** |  | 
 

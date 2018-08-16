@@ -3,8 +3,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**redistribute_ospf** | **bool** |  | [optional] [default to false]
-**redistribute_static** | **bool** |  | [optional] [default to true]
 **advertise_internal** | **bool** |  | [optional] [default to true]
 **advertise_external** | **bool** |  | [optional] [default to false]
 

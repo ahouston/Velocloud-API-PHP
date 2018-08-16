@@ -1,20 +1,20 @@
 # Swagger\Client\GatewayApi
 
-All URIs are relative to *https://sprint-vco1.velocloud.net/portal/rest*
+All URIs are relative to *https://localhost/portal/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**gatewayDeleteGateway**](GatewayApi.md#gatewayDeleteGateway) | **POST** /gateway/deleteGateway | 
+[**gatewayDeleteGateway**](GatewayApi.md#gatewayDeleteGateway) | **POST** /gateway/deleteGateway | Delete a gateway
 [**gatewayGatewayProvision**](GatewayApi.md#gatewayGatewayProvision) | **POST** /gateway/gatewayProvision | Provision a gateway
-[**gatewayUpdateGatewayAttributes**](GatewayApi.md#gatewayUpdateGatewayAttributes) | **POST** /gateway/updateGatewayAttributes | 
+[**gatewayUpdateGatewayAttributes**](GatewayApi.md#gatewayUpdateGatewayAttributes) | **POST** /gateway/updateGatewayAttributes | Update gateway attributes
 
 
 # **gatewayDeleteGateway**
-> object gatewayDeleteGateway($body)
+> \Swagger\Client\Model\GatewayDeleteGatewayResult gatewayDeleteGateway($body)
 
+Delete a gateway
 
-
-
+Delete a gateway by id.  Privileges required:  `DELETE` `GATEWAY`
 
 ### Example
 ```php
@@ -45,7 +45,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**\Swagger\Client\Model\GatewayDeleteGatewayResult**](../Model/GatewayDeleteGatewayResult.md)
 
 ### Authorization
 
@@ -59,11 +59,11 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **gatewayGatewayProvision**
-> object gatewayGatewayProvision($body)
+> \Swagger\Client\Model\GatewayGatewayProvisionResult gatewayGatewayProvision($body)
 
 Provision a gateway
 
-Provision a gateway into an operator network.
+Provision a gateway into an operator network.  Privileges required:  `CREATE` `GATEWAY`
 
 ### Example
 ```php
@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**\Swagger\Client\Model\GatewayGatewayProvisionResult**](../Model/GatewayGatewayProvisionResult.md)
 
 ### Authorization
 
@@ -108,11 +108,11 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **gatewayUpdateGatewayAttributes**
-> object gatewayUpdateGatewayAttributes($body)
+> \Swagger\Client\Model\GatewayUpdateGatewayAttributesResult gatewayUpdateGatewayAttributes($body)
 
+Update gateway attributes
 
-
-
+Update gateway attributes (name, ipAddress, on-premise parametrization and description) and associated site attributes  Privileges required:  `UPDATE` `GATEWAY`
 
 ### Example
 ```php
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**\Swagger\Client\Model\GatewayUpdateGatewayAttributesResult**](../Model/GatewayUpdateGatewayAttributesResult.md)
 
 ### Authorization
 

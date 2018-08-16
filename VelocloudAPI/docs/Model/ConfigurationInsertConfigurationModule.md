@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **string** |  | 
-**type** | **string** |  | 
+**type** | **string** |  | [optional] 
 **description** | **string** |  | [optional] 
 **data** | **object** |  | 
 **configuration_id** | **int** |  | 

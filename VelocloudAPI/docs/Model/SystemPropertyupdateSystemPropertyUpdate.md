@@ -5,9 +5,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **string** |  | [optional] 
 **value** | **string** |  | [optional] 
-**defaultvalue** | **string** |  | [optional] 
-**is_password** | **int** |  | [optional] 
-**is_read_only** | **int** |  | [optional] 
+**default_value** | **string** |  | [optional] 
+**is_password** | **bool** |  | [optional] 
+**is_read_only** | **bool** |  | [optional] 
 **data_type** | **string** |  | [optional] 
 **description** | **string** |  | [optional] 
 

@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**_update** | [**\Swagger\Client\Model\CreateUserObject**](CreateUserObject.md) |  | 
+**_update** | [**\Swagger\Client\Model\OperatorUserWithRoleInfo**](OperatorUserWithRoleInfo.md) |  | 
 **id** | **int** |  | [optional] 
 **username** | **string** |  | [optional] 
 

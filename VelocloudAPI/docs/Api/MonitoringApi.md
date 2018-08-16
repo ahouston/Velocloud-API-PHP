@@ -1,22 +1,72 @@
 # Swagger\Client\MonitoringApi
 
-All URIs are relative to *https://sprint-vco1.velocloud.net/portal/rest*
+All URIs are relative to *https://localhost/portal/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**monitoringGetAggregateEnterpriseEvents**](MonitoringApi.md#monitoringGetAggregateEnterpriseEvents) | **POST** /monitoring/getAggregateEnterpriseEvents | Fetch all ent. events
-[**monitoringGetAggregates**](MonitoringApi.md#monitoringGetAggregates) | **POST** /monitoring/getAggregates | Generate aggregate enterprise/edge information
-[**monitoringGetEdgeBgpPeerStatus**](MonitoringApi.md#monitoringGetEdgeBgpPeerStatus) | **POST** /monitoring/getEnterpriseEdgeBgpPeerStatus | get BGP adjacency status for an edge
-[**monitoringGetEnterpriseBgpPeerStatus**](MonitoringApi.md#monitoringGetEnterpriseBgpPeerStatus) | **POST** /monitoring/getEnterpriseBgpPeerStatus | get enterprise BGP adjacency status
-[**monitoringGetEnterpriseEdgeLinkStatus**](MonitoringApi.md#monitoringGetEnterpriseEdgeLinkStatus) | **POST** /monitoring/getEnterpriseEdgeLinkStatus | edge and link status for monitoring
+[**monitoringGetAggregateEdgeLinkMetrics**](MonitoringApi.md#monitoringGetAggregateEdgeLinkMetrics) | **POST** /monitoring/getAggregateEdgeLinkMetrics | Get aggregated edge link metrics across enterprises
+[**monitoringGetAggregateEnterpriseEvents**](MonitoringApi.md#monitoringGetAggregateEnterpriseEvents) | **POST** /monitoring/getAggregateEnterpriseEvents | Fetch all enterprise events
+[**monitoringGetAggregates**](MonitoringApi.md#monitoringGetAggregates) | **POST** /monitoring/getAggregates | Get aggregate enterprise and edge information
+[**monitoringGetEnterpriseBgpPeerStatus**](MonitoringApi.md#monitoringGetEnterpriseBgpPeerStatus) | **POST** /monitoring/getEnterpriseBgpPeerStatus | Get gateway BGP peer status for all enterprise gateways
+[**monitoringGetEnterpriseEdgeBgpPeerStatus**](MonitoringApi.md#monitoringGetEnterpriseEdgeBgpPeerStatus) | **POST** /monitoring/getEnterpriseEdgeBgpPeerStatus | Get edge BGP peer status for all enterprise edges
+[**monitoringGetEnterpriseEdgeLinkStatus**](MonitoringApi.md#monitoringGetEnterpriseEdgeLinkStatus) | **POST** /monitoring/getEnterpriseEdgeLinkStatus | Get edge and link status data
 
+
+# **monitoringGetAggregateEdgeLinkMetrics**
+> \Swagger\Client\Model\MonitoringGetAggregateEdgeLinkMetricsResultItem[] monitoringGetAggregateEdgeLinkMetrics($body)
+
+Get aggregated edge link metrics across enterprises
+
+Get aggregate edge link metrics across enterprises. On success, returns an array of network utilization metrics, one per link.  Privileges required:  `READ` `ENTERPRISE`  `READ` `EDGE`
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Swagger\Client\Api\MonitoringApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$body = new \Swagger\Client\Model\MonitoringGetAggregateEdgeLinkMetrics(); // \Swagger\Client\Model\MonitoringGetAggregateEdgeLinkMetrics | 
+
+try {
+    $result = $apiInstance->monitoringGetAggregateEdgeLinkMetrics($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling MonitoringApi->monitoringGetAggregateEdgeLinkMetrics: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Swagger\Client\Model\MonitoringGetAggregateEdgeLinkMetrics**](../Model/MonitoringGetAggregateEdgeLinkMetrics.md)|  |
+
+### Return type
+
+[**\Swagger\Client\Model\MonitoringGetAggregateEdgeLinkMetricsResultItem[]**](../Model/MonitoringGetAggregateEdgeLinkMetricsResultItem.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **monitoringGetAggregateEnterpriseEvents**
-> object monitoringGetAggregateEnterpriseEvents($body)
+> \Swagger\Client\Model\MonitoringGetAggregateEnterpriseEventsResult monitoringGetAggregateEnterpriseEvents($body)
 
-Fetch all ent. events
+Fetch all enterprise events
 
-Fetch all events across all enterprises. When called in MSP context, only enterprises managed by the MSP are queried.
+Fetch all events across all enterprises in a paginated list. When called in the MSP/Partner context, only enterprises managed by the MSP are queried.  Privileges required:  `READ` `ENTERPRISE`  `READ` `EDGE`
 
 ### Example
 ```php
@@ -47,7 +97,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
+[**\Swagger\Client\Model\MonitoringGetAggregateEnterpriseEventsResult**](../Model/MonitoringGetAggregateEnterpriseEventsResult.md)
 
 ### Authorization
 
@@ -61,9 +111,11 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **monitoringGetAggregates**
-> object monitoringGetAggregates($body)
+> \Swagger\Client\Model\MonitoringGetAggregatesResult monitoringGetAggregates($body)
 
-Generate aggregate enterprise/edge information
+Get aggregate enterprise and edge information
+
+Retrieve a comprehensive listing of all enterprises and edges on a network. Returns an object containing an aggregate `edgeCount`, a list (`enterprises`) containing enterprise objects, and a map (`edges`) which gives edge counts per enterprise.  Privileges required:  `READ` `ENTERPRISE`  `READ` `EDGE`
 
 ### Example
 ```php
@@ -94,56 +146,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**object**
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
-
-# **monitoringGetEdgeBgpPeerStatus**
-> object[] monitoringGetEdgeBgpPeerStatus($body)
-
-get BGP adjacency status for an edge
-
-Get information about the edge's BGP peer status
-
-### Example
-```php
-<?php
-require_once(__DIR__ . '/vendor/autoload.php');
-
-$apiInstance = new Swagger\Client\Api\MonitoringApi(
-    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
-    // This is optional, `GuzzleHttp\Client` will be used as default.
-    new GuzzleHttp\Client()
-);
-$body = new \stdClass; // object | 
-
-try {
-    $result = $apiInstance->monitoringGetEdgeBgpPeerStatus($body);
-    print_r($result);
-} catch (Exception $e) {
-    echo 'Exception when calling MonitoringApi->monitoringGetEdgeBgpPeerStatus: ', $e->getMessage(), PHP_EOL;
-}
-?>
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | **object**|  |
-
-### Return type
-
-**object[]**
+[**\Swagger\Client\Model\MonitoringGetAggregatesResult**](../Model/MonitoringGetAggregatesResult.md)
 
 ### Authorization
 
@@ -157,11 +160,11 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **monitoringGetEnterpriseBgpPeerStatus**
-> object[] monitoringGetEnterpriseBgpPeerStatus($body)
+> \Swagger\Client\Model\MonitoringGetEnterpriseBgpPeerStatusResultItem[] monitoringGetEnterpriseBgpPeerStatus($body)
 
-get enterprise BGP adjacency status
+Get gateway BGP peer status for all enterprise gateways
 
-Get edge and edge-link status and basic attributes for monitoring
+Returns an array where each entry corresponds to a gateway and contains an associated set of BGP peers with state records.  Privileges required:  `READ` `NETWORK_SERVICE`
 
 ### Example
 ```php
@@ -173,7 +176,7 @@ $apiInstance = new Swagger\Client\Api\MonitoringApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \stdClass; // object | 
+$body = new \Swagger\Client\Model\Body(); // \Swagger\Client\Model\Body | 
 
 try {
     $result = $apiInstance->monitoringGetEnterpriseBgpPeerStatus($body);
@@ -188,11 +191,60 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **object**|  |
+ **body** | [**\Swagger\Client\Model\Body**](../Model/Body.md)|  |
 
 ### Return type
 
-**object[]**
+[**\Swagger\Client\Model\MonitoringGetEnterpriseBgpPeerStatusResultItem[]**](../Model/MonitoringGetEnterpriseBgpPeerStatusResultItem.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **monitoringGetEnterpriseEdgeBgpPeerStatus**
+> \Swagger\Client\Model\MonitoringGetEnterpriseEdgeBgpPeerStatusResultItem[] monitoringGetEnterpriseEdgeBgpPeerStatus($body)
+
+Get edge BGP peer status for all enterprise edges
+
+Returns an array where each entry corresponds to an edge and contains an associated set of BGP peers and state records.  Privileges required:  `READ` `EDGE`
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Swagger\Client\Api\MonitoringApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+$body = new \Swagger\Client\Model\Body1(); // \Swagger\Client\Model\Body1 | 
+
+try {
+    $result = $apiInstance->monitoringGetEnterpriseEdgeBgpPeerStatus($body);
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling MonitoringApi->monitoringGetEnterpriseEdgeBgpPeerStatus: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**\Swagger\Client\Model\Body1**](../Model/Body1.md)|  |
+
+### Return type
+
+[**\Swagger\Client\Model\MonitoringGetEnterpriseEdgeBgpPeerStatusResultItem[]**](../Model/MonitoringGetEnterpriseEdgeBgpPeerStatusResultItem.md)
 
 ### Authorization
 
@@ -206,11 +258,11 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **monitoringGetEnterpriseEdgeLinkStatus**
-> object[] monitoringGetEnterpriseEdgeLinkStatus($body)
+> \Swagger\Client\Model\MonitoringGetEnterpriseEdgeLinkStatusResultItem[] monitoringGetEnterpriseEdgeLinkStatus($body)
 
-edge and link status for monitoring
+Get edge and link status data
 
-Get edge and edge-link status and basic attributes for monitoring
+Get current edge and edge-link status for all enterprise edges.  Privileges required:  `READ` `ENTERPRISE`  `READ` `EDGE`
 
 ### Example
 ```php
@@ -222,7 +274,7 @@ $apiInstance = new Swagger\Client\Api\MonitoringApi(
     // This is optional, `GuzzleHttp\Client` will be used as default.
     new GuzzleHttp\Client()
 );
-$body = new \stdClass; // object | 
+$body = new \Swagger\Client\Model\Body2(); // \Swagger\Client\Model\Body2 | 
 
 try {
     $result = $apiInstance->monitoringGetEnterpriseEdgeLinkStatus($body);
@@ -237,11 +289,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **object**|  |
+ **body** | [**\Swagger\Client\Model\Body2**](../Model/Body2.md)|  |
 
 ### Return type
 
-**object[]**
+[**\Swagger\Client\Model\MonitoringGetEnterpriseEdgeLinkStatusResultItem[]**](../Model/MonitoringGetEnterpriseEdgeLinkStatusResultItem.md)
 
 ### Authorization
 

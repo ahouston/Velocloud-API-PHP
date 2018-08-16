@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**enabled** | **bool** |  | [optional] 
 **enable** | **bool** |  | [optional] 
 **users** | [**\Swagger\Client\Model\EdgeDeviceSettingsDataSnmpSnmpv3Users[]**](EdgeDeviceSettingsDataSnmpSnmpv3Users.md) |  | [optional] 
 

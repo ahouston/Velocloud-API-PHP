@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**records** | [**\Swagger\Client\Model\EnterprisedeleteEnterpriseGatewayRecordsRecords[]**](EnterprisedeleteEnterpriseGatewayRecordsRecords.md) |  | [optional] 
+**records** | [**\Swagger\Client\Model\EnterpriseDeleteEnterpriseDeleteEnterpriseGatewayRecordsRecord[]**](EnterpriseDeleteEnterpriseDeleteEnterpriseGatewayRecordsRecord.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

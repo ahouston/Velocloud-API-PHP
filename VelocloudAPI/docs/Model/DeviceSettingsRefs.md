@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**device_settingssegment** | [**\Swagger\Client\Model\Segment**](Segment.md) |  | [optional] 
 **device_settingsdnsprimary_provider** | [**\Swagger\Client\Model\Dns**](Dns.md) |  | [optional] 
 **device_settingsdnsbackup_provider** | [**\Swagger\Client\Model\Dns**](Dns.md) |  | [optional] 
 **device_settingsdnsprivate_providers** | [**\Swagger\Client\Model\Dns[]**](Dns.md) |  | [optional] 
