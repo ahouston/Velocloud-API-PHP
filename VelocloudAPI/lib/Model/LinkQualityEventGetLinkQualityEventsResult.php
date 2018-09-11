@@ -99,13 +99,20 @@ class LinkQualityEventGetLinkQualityEventsResult implements ModelInterface, Arra
         'overall_link_quality' => 'overallLinkQuality'
     ];
 
+    protected static $individualClass = '\Swagger\Client\Model\LinkQualityObject';
+    
+    public static function individualClass() {
+        return self::$individualClass;   
+    }
+    
     /**
      * Array of attributes to setter functions (for deserialization of responses)
      *
      * @var string[]
      */
     protected static $setters = [
-        'overall_link_quality' => 'setOverallLinkQuality'
+        'overall_link_quality' => 'setOverallLinkQuality',
+        'individual' => 'setIndividualLinkQuality'
     ];
 
     /**
@@ -114,7 +121,8 @@ class LinkQualityEventGetLinkQualityEventsResult implements ModelInterface, Arra
      * @var string[]
      */
     protected static $getters = [
-        'overall_link_quality' => 'getOverallLinkQuality'
+        'overall_link_quality' => 'getOverallLinkQuality',
+        'individual' => 'getIndividualLinkQuality'
     ];
 
     /**
@@ -219,6 +227,24 @@ class LinkQualityEventGetLinkQualityEventsResult implements ModelInterface, Arra
     }
 
     /**
+     * Gets individual_link_quality
+     *
+     * @return \Swagger\Client\Model\LinkQualityObject
+     */
+    public function getIndividualLinkQuality($uuid)
+    {
+        if (isset($this->container['individual_link_quality'][$uuid])) {
+            return $this->container['individual_link_quality'][$uuid];
+        }
+        else { return false;}
+    }
+    
+    public function getIndividualLinks()
+    {
+        return $this->container['individual_link_quality'];
+    }
+    
+    /**
      * Sets overall_link_quality
      *
      * @param \Swagger\Client\Model\LinkQualityObject $overall_link_quality overall_link_quality
@@ -228,9 +254,20 @@ class LinkQualityEventGetLinkQualityEventsResult implements ModelInterface, Arra
     public function setOverallLinkQuality($overall_link_quality)
     {
         $this->container['overall_link_quality'] = $overall_link_quality;
-
         return $this;
     }
+    
+    /**
+     * Sets individual_link_quality
+     * @param link_uuid,data
+     * @return $this
+     */
+    public function setIndividualLinkQuality($uuid,$individual_link_quality)
+    {
+        $this->container['individual_link_quality'][$uuid] = $individual_link_quality;
+        return $this;
+    }
+    
     /**
      * Returns true if offset exists. False otherwise.
      *
